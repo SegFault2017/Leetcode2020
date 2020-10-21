@@ -44,6 +44,7 @@ class Disjoint:
         parent_i = self.m * y + x
         while self.rank[parent_i] != parent_i:
             parent_i = self.rank[parent_i]
+            self.rank[parent_i] = self.rank[self.rank[parent_i]]
         return parent_i
 
     # Detemrine wherether cell and other have the same connectivity,
