@@ -4,9 +4,41 @@
 # [17] Letter Combinations of a Phone Number
 #
 
+from typing import List
+
 # @lc code=start
+
+
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        
-# @lc code=end
+        """Strategy 1: Backtracking 
+        Runtime: O(3 ^l), where l is the longest length of the string
+        Space: O(1)
 
+        Args:
+            digits (str): string of digits
+
+        Returns:
+            List[str]: list of string combinations
+        """
+
+        n = len(digits)
+        if n == 0:
+            return[]
+
+        letters = {2: ["a", "b", "c"], 3: ["d", "e", "f"], 4: ["g", "h", "i"],
+                   5: ["j", "k", "l"], 6: ["m", "n", "o"], 7: ["p", "q", "r", "s"], 8: ["t", "u", "v"], 9: ["w", "x", "y", "z"]}
+
+        output = []
+
+        def dfs(combination: str, next_digit: List[str]) -> None:
+            if len(next_digit) == 0:
+                output.append(combination)
+                return
+
+            for letter in letters[int(next_digit[0])]:
+                dfs(combination + letter, next_digit[1:])
+            return
+        dfs("", digits)
+        return output
+# @lc code=end
