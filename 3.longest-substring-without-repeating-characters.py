@@ -6,33 +6,6 @@
 
 # @lc code=start
 class Solution:
-    # def lengthOfLongestSubstring(self, s: str) -> int:
-    #     """ Strategy 1: hash + sliding window
-    #     Runtime: O(n)
-    #     Space: O(min(m,n)), where m is the size of the charset and n is the size of the string
-    #     Args:
-    #         s (str): a string
-
-    #     Returns:
-    #         int: return the length longest substring without duplciates characters
-    #     """
-
-    #     n = len(s)
-    #     if n == 0:
-    #         return 0
-
-    #     unique = set()
-    #     i = j = longest = 0
-    #     while j < n:
-    #         if s[j] in unique:
-    #             unique.remove(s[i])
-    #             i += 1
-    #         else:
-    #             unique.add(s[j])
-    #             j += 1
-    #             longest = max(j - i, longest)
-    #     return longest
-
     def lengthOfLongestSubstring(self, s: str) -> int:
         """Strategy 2: Sliding window optimized
         Rutime: O(n)
@@ -57,4 +30,3 @@ class Solution:
             # print(i, index, char_set)
 
         return longest
-# @lc code=end
