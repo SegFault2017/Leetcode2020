@@ -8,7 +8,8 @@
 class Solution:
     def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
         """Strategy 1: Linear scan 
-
+        Runtime: O(N), where N is the size of the flowerbed
+        Space: O(1)
         Args:
             flowerbed (List[int]): a list of int, 0 means empty pot and 1 means occupies
             n (int): number of plants to plant
