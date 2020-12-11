@@ -7,6 +7,16 @@
 # @lc code=start
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
+        """Strategy 1: 2 pointers
+        Runtime: O(n)
+        Space: O(1)
+
+        Args:
+            nums (List[int]): list of integers
+
+        Returns:
+            int: the length of modified array
+        """
         n = len(nums)
         if n == 0 or n == 1:
             return n
