@@ -1,4 +1,6 @@
 class Solution:
+    from collections import Counter
+
     def wallsAndGates(self, rooms: List[List[int]]) -> None:
         """
         Strategy 1: BFS
