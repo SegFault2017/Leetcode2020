@@ -29,6 +29,16 @@ class Disjoint:
 
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        """Strategy 1: Union Find
+        Runtime: O(n), where n is the number of nodes in the graphs
+        Space: O(n)
+        Args:
+            n (int): the number of nodes in the graphs
+            edges (List[List[int]]): edges of the graphs
+
+        Returns:
+            int: number of undirected graph
+        """
         disjoint = Disjoint(n)
 
         for u, v in edges:
