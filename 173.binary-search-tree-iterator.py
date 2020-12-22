@@ -13,30 +13,55 @@
 #         self.right = right
 class BSTIterator:
     """Strategy1: In Orider Traversal
-    Runtime: O(n), where n is the # of nodes
-    Space: O(1)
+    Runtime: O(1), where n is the # of nodes
+    Space: O(h)
     """
 
+    # def __init__(self, root: 'TreeNode') -> None:
+    #     self.in_order = [-1]
+    #     self.inx = 0
+    #     self.dfs(root)
+
+    # def dfs(self, node: 'TreeNode') -> None:
+    #     if not node:
+    #         return
+
+    #     self.dfs(node.left)
+    #     self.in_order.append(node.val)
+    #     self.dfs(node.right)
+    #     return
+
+    # def next(self) -> int:
+    #     self.inx += 1
+    #     return self.in_order[self.inx]
+
+    # def hasNext(self) -> bool:
+    #     return self.inx != len(self.in_order) - 1
+
+    """Strategy1: In Orider Traversal
+    Runtime: O(1), where n is the # of nodes
+    Space: O(h)
+    """
+
+    def leftMost(self, node: 'TreeNode') -> None:
+        while node:
+            self.stack.append(node)
+            node = node.left
+        return
+
     def __init__(self, root: 'TreeNode') -> None:
-        self.in_order = [-1]
-        self.inx = 0
-        self.dfs(root)
-
-    def dfs(self, node: 'TreeNode') -> None:
-        if not node:
-            return
-
-        self.dfs(node.left)
-        self.in_order.append(node.val)
-        self.dfs(node.right)
+        self.stack = []
+        self.leftMost(root)
         return
 
     def next(self) -> int:
-        self.inx += 1
-        return self.in_order[self.inx]
+        top = self.stack.pop()
+        if top.right:
+            self.leftMost(top.right)
+        return top.val
 
     def hasNext(self) -> bool:
-        return self.inx != len(self.in_order) - 1
+        return len(self.stack) > 0
 
         # Your BSTIterator object will be instantiated and called as such:
         # obj = BSTIterator(root)
