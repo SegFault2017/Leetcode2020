@@ -12,8 +12,8 @@ from typing import List
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         """Strategy 1: Backtracking 
-        Runtime: O(3 ^l), where l is the longest length of the string
-        Space: O(1)
+        Runtime: O(3^n * 4^m), where n is the number of 3 letter num in phone, and m is the 4 letter num in phone.
+        Space: O(3^n * 4^m)
 
         Args:
             digits (str): string of digits
