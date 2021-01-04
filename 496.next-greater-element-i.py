@@ -12,7 +12,8 @@ class Solution:
         Space: O(n1+n2)
 
         Args:
-            nums1 (List[int]): list of integers
+            nums1 (List
+            [int]): list of integers
             nums2 (List[int]): list of integers
 
         Returns:
