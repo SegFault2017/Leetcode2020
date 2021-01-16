@@ -16,9 +16,15 @@ class SuffixTrie:
     def populate_suffix_trie_from(self, string):
         for i in range(len(string)):
             self.insert(i, string)
+        return
 
     def contains(self, string):
         curr = self.root
         for c in string:
             curr = curr[c]
         return self.end_symbol in curr
+
+
+st = SuffixTrie("babc")
+contains = st.contains("bc")
+print("Restlt: ", contains)
