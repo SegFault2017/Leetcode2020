@@ -20,7 +20,7 @@ class Solution:
 
         visited = [False] * (n+1)
 
-        def dfs(pos: int) -> None:
+        def dfs(pos: int) -> int:
             if pos > n:
                 return 1
 
