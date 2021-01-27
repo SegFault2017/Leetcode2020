@@ -19,4 +19,4 @@ def combination(n, arr):
 
 arr = [[2, 3], [4], [2, 3], [1, 2]]
 
-print(combination(10, arr))
+# print(combination(10, arr))
