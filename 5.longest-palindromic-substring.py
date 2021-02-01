@@ -22,6 +22,8 @@ class Solution:
         """
         n = len(s)
         dp = [[True if y == x else False for x in range(n)] for y in range(n)]
+        # dp = [[False] * n for _ in range(n)]
+        # dp[0][0] = True
         longest = 1
         start = 0
         for x in range(1, n):
