@@ -41,7 +41,7 @@ class Solution:
         s[i+1:] = s[i+1:][::-1]
 
         num = reduce(lambda x, y: 10 * x + y, s)
-        return num if num < 2 ** 31 - 1 else -1
+        return num if num < 2 ** 31 else -1
 
 
 # @lc code=end

@@ -30,7 +30,6 @@ class Solution:
 
             output[i % n] = nums[stack[-1]] if stack else -1
             stack.append(i % n)
-
         return output
 
 
