@@ -9,7 +9,7 @@ class Solution:
     # def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
     #     """ Strategey 1: BFS
     #     Runtime: O(n^2), where n is the # of rows
-    #     Space: O(1)
+    #     Space: O(n^2)
 
     #     Args:
     #         grid (List[List[int]]): each cell in the grid is either 0(empty) or 1
@@ -47,8 +47,8 @@ class Solution:
 
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
         """ Strategey 1: BFS
-        Runtime: O(n^2), where n is the # of rows
-        Space: O(1)
+        Runtime: O(n^2 Log(n^2)), where n is the # of rows
+        Space: O(n^2)
 
 
         Args:
