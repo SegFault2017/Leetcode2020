@@ -30,6 +30,6 @@ class Solution:
                 nums[first_ptr] = nums[second_ptr]
             second_ptr += 1
 
-        nums = nums[:first_ptr+1]
-        return len(nums)
+        # nums = nums[:first_ptr+1]
+        return first_ptr + 1
         # @lc code=end

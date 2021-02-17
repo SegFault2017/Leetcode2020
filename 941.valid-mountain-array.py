@@ -8,7 +8,8 @@
 class Solution:
     def validMountainArray(self, arr: List[int]) -> bool:
         """Strategy 1: one pass
-
+        Runtime: O(n), where n is the number of elements in the arr
+        Space: O(1)
         Args:
             arr (List[int]): list of integer
 
