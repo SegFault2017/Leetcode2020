@@ -12,14 +12,12 @@ class Solution:
     def binary_search(self, nums: List[int], target: int, left: bool) -> int:
         lo = 0
         hi = len(nums)
-
         while lo < hi:
             mid = lo // 2 + hi // 2
             if nums[mid] > target or (left and nums[mid] == target):
                 hi = mid
             else:
                 lo = mid + 1
-
         return lo
 
     def searchRange(self, nums: List[int], target: int) -> List[int]:
@@ -40,7 +38,6 @@ class Solution:
         # print(left)
         if left == len(nums) or nums[left] != target:
             return [-1, -1]
-
         return [left, self.binary_search(nums, target, False)-1]
 
 
