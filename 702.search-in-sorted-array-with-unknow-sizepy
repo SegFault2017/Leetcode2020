@@ -1,0 +1,26 @@
+# """
+# This is ArrayReader's API interface.
+# You should not implement it, or speculate about its implementation
+# """
+# class ArrayReader:
+#    def get(self, index: int) -> int:
+
+class Solution:
+    def search(self, reader, target):
+        """
+        Strategy 1: Binary Search
+        :type reader: ArrayReader
+        :type target: int
+        :rtype: int
+        """
+        lo, hi = 0, 10**4
+        while lo < hi:
+            mid = lo + (hi - lo)//2
+            read = reader.get(mid)
+            if read == target:
+                return mid
+            elif read < target:
+                lo = mid + 1
+            else:
+                hi = mid
+        return -1
