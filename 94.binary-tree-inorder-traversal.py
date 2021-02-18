@@ -62,12 +62,12 @@ class Solution:
         stack = []
 
         # [2]
-        while True:
+        while stack or curr:
             while curr:
                 stack.append(curr)
                 curr = curr.left
-            if len(stack) == 0:
-                return output
+            # if len(stack) == 0:
+            #     return output
             curr = stack.pop()
             output.append(curr.val)
             curr = curr.right
