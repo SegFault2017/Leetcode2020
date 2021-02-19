@@ -1,0 +1,23 @@
+class Solution:
+    def lowestCommonAncestor(self, root: 'TreeNode', nodes: 'List[TreeNode]') -> 'TreeNode':
+        """ Strategy 1: DFS
+        Runtime:O(n), where n is the size of the tree
+        Space:O(h), where h is the height of the tree
+
+        Returns:
+            [Node]: the lca among the nodes in nodes
+        """
+        nodes = set(nodes)
+        return self.dfs(root, nodes)
+
+    def dfs(self, root, nodes):
+        if not root:
+            return None
+        if root in nodes:
+            return root
+        left = self.dfs(root.left, nodes)
+        right = self.dfs(root.right, nodes)
+        if left in nodes and right in nodes:
+            return root
+        else:
+            return left or right

@@ -1,7 +1,7 @@
 #
-# @lc app=leetcode id=865 lang=python3
+# @lc app=leetcode id=1123 lang=python3
 #
-# [865] Smallest Subtree with all the Deepest Nodes
+# [1123] Lowest Common Ancestor of Deepest Leaves
 #
 
 # @lc code=start
@@ -16,19 +16,18 @@ from typing import NamedTuple
 
 
 class Solution:
-    from collections import namedtuple
-
-    def subtreeWithAllDeepest(self, root: TreeNode) -> TreeNode:
-        """Strategy 1: DFS
-        Runtime: O(N), where N is the number of nodes in the tree
-        Space: O(N)
+    def lcaDeepestLeaves(self, root: 'TreeNode') -> 'TreeNode':
+        """ Strategy 1: Dfs
+        Runtime: O(n), where n is the number of nodes
+        Space: O(h), where h is the height of the tree
 
         Args:
-            root (TreeNode): the root of the tree
+            root [TreeNode]: the root node
 
         Returns:
-            TreeNode: the smallest subtree which has deepest height
+            [TreeNode]: the lca of deepest node
         """
+
         output = namedtuple("output", ("node", "dist"))
 
         def dfs(node: 'TreeNode') -> NamedTuple:
@@ -41,7 +40,7 @@ class Solution:
             if right.dist > left.dist:
                 return output(right.node, right.dist+1)
             return output(node, left.dist+1)
+
         return dfs(root).node
 
-
-# @lc code=end
+        # @lc code=end
