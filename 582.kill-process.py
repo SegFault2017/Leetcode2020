@@ -5,7 +5,7 @@ from typing import List
 class Solution:
 
     def killProcess(self, pid: List[int], ppid: List[int], kill: int) -> List[int]:
-        """ Strategy 1: Kill by makeing a tree
+        """ Strategy 1: Tree Simulation
         Runtime: O(n), where n is the number of pids
         Space: O(n)
 
