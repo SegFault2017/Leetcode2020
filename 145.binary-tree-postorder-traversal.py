@@ -50,15 +50,24 @@ class Solution:
 
         if not root:
             return []
-        stack = [root]
+        stack = []
         output = []
 
-        while stack:
+        while stack or root:
+            while root:
+                if root.right:
+                    stack.append(root.right)
+                stack.append(root)
+                root = root.left
+
             root = stack.pop()
-            output.append(root.val)
-            if root.left:
-                stack.append(root.left)
-            if root.right:
-                stack.append(root.right)
-        return output[::-1]
+            if stack and root.right == stack[-1]:
+                stack[-1] = root
+                root = root.right
+            else:
+                output.append(root.val)
+                root = None
+        return output
+
+
 # @lc code=end
